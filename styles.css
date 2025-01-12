@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px; /* Added padding for mobile */
+    box-sizing: border-box; /* Ensures padding is included in width/height */
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width for mobile */
+    max-width: 400px; /* Max width for larger screens */
+}
+
+.counter {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.5em; /* Responsive font size */
+}
+
+h2 {
+    font-size: 2em; /* Responsive font size */
+}
+
+h3 {
+    font-size: 1.2em; /* Responsive font size */
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    font-size: 1em; /* Responsive font size */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.2em; /* Smaller font size for mobile */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Smaller font size for mobile */
+    }
+
+    h3 {
+        font-size: 1em; /* Smaller font size for mobile */
+    }
+
+    button {
+        width: 100%; /* Full width buttons on mobile */
+        padding: 12px; /* Increased padding for better touch targets */
+    }
+}
