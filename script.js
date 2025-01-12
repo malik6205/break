@@ -45,35 +45,26 @@ document.addEventListener("DOMContentLoaded", () => {
     // Display the initial count
     breakCountDisplay.textContent = breakCount;
 
-    // Update count display and localStorage
+    // Update break count display and localStorage
     function updateBreakCount() {
         breakCountDisplay.textContent = breakCount;
         localStorage.setItem("breakCount", breakCount);
     }
 
-    // Event listeners for mobile and desktop compatibility
-    function addEventListeners(button, callback) {
-        button.addEventListener("click", callback);
-        button.addEventListener("touchstart", (e) => {
-            e.preventDefault();  // Prevent double trigger on mobile
-            callback();
-        }, { passive: true });
-    }
-
-    // Add break functionality
-    addEventListeners(addBreakButton, () => {
+    // Add break functionality using pointer events
+    addBreakButton.addEventListener("pointerup", () => {
         breakCount++;
         updateBreakCount();
     });
 
     // Reset break functionality
-    addEventListeners(resetBreakButton, () => {
+    resetBreakButton.addEventListener("pointerup", () => {
         breakCount = 0;
         updateBreakCount();
     });
 
     // Generate a new motivational quote
-    addEventListeners(newQuoteButton, () => {
+    newQuoteButton.addEventListener("pointerup", () => {
         const randomIndex = Math.floor(Math.random() * quotes.length);
         quoteDisplay.textContent = quotes[randomIndex];
     });
